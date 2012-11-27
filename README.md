@@ -1,4 +1,4 @@
 autocomplete
 ============
 
-Test project.
+An autocomplete thingy.
