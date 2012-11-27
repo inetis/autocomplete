@@ -1,4 +1,4 @@
 autocomplete
 ============
 
-karel test
+Test project.
