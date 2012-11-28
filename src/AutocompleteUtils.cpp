@@ -47,46 +47,44 @@ string error(const string &message, const size_t &line)
 
 void TTrie::load(const string file_name)
 {
-    // init Trie
-    if (sum_weight > .0)
-    {
-        nodes.clear();
-        nodes.push_back(Node(' ', .0));
-        sum_weight = .0;
-    }
+	// init Trie
+	if (sum_weight > .0)
+	{
+		nodes.clear();
+		nodes.push_back(Node(' ', .0));
+		sum_weight = .0;
+	}
 
-    ifstream f(file_name.c_str());
-    if (!f)
-        throw runtime_error("TTrie::load - cannot open file " + file_name);
+	ifstream f(file_name.c_str());
+	if (!f)
+		throw runtime_error("TTrie::load - cannot open file " + file_name);
 
-    float  freq;
-    string word;
+	float  freq;
+	string word;
     size_t line(0);
 
-    while (f >> freq)
-    {
-        if (!(f.ignore() && getline(f, word, '\n')))
-            throw runtime_error(error("TTrie::load cannot read word", line));
+	while (f >> freq)
+	{
+	    if (!(f.ignore() && getline(f, word, '\n')))
+			throw runtime_error(error("TTrie::load cannot read word", line));
 
         if (word[word.size() - 1] == '\r')  // for unix
-            word.resize(word.size() - 1);
+			word.resize(word.size() - 1);
 
-        add(word, freq);   
-        ++line;
-    }
+		add(word, freq);	
+		++line;
+	}
+	  
+	if (!f.eof())
+		throw runtime_error(error("TTrie::load cannot read weight", line));
 
-    if (!f.eof())
-        throw runtime_error(error("TTrie::load cannot read weight", line));
+	if (sum_weight == .0)
+		throw runtime_error("TTrie::load " + file_name + " is empty");
 
-    if (sum_weight == .0)
-        throw runtime_error("TTrie::load " + file_name + " is empty");
-
-    finalize(0);
+	finalize(0);
 }
-                                                                                                                                                                 
-                                                                                                                                                                 
 
-void TTrie::add(const string s, float weight)
+void TTrie::add(const string &s, const float &weight)
 {
 	if (weight <= (float).0)
 		throw runtime_error("TTrie:add error: weight must be positive number");

@@ -19,7 +19,7 @@ extern "C" const char* complete(const char* s)
 
     string query(s);
 	vector<string> results;
-	ac.autocomplete(query, results, 15);   
+	ac.autocomplete(query, results, 5);
 
     result = "[";
     bool first = true;

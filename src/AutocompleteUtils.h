@@ -62,7 +62,7 @@ class TTrie
 		vector<Node>  nodes;
 		float         sum_weight;
 
-		void add(const string s, float weight);
+		void add(const string &s, const float &weight);
 		void add(const size_t node_id, string::const_iterator begin,  const string::const_iterator end,  const float weight);
 		void finalize(const size_t node_id);
 };

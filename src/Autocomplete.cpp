@@ -96,7 +96,7 @@ void TAutocomplete::expand(const TCandidate                &candidate,
 				           const string::const_iterator    &query_end,
 						   const float                     &min_prob)
 {
-	if (candidate.query == query_end)  // query is alreay matched to trie interior node ->
+	if (candidate.query == query_end)  // query is alreay matched to trie interior node
 	{
        	expand_matched_query(candidate, candidates);
 		return;

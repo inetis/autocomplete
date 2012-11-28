@@ -46,6 +46,8 @@ int main()
 	test(ac, "smarje");           //     77 expanded nodes 
 	test(ac, "fucking");          //    185 expanded nodes 
 	test(ac, "frugle");           //    342 expanded nodes 
+	test(ac, "smrje");           
+	test(ac, "kamence");           
 	
 	return 0;
 }
