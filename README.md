@@ -1,4 +1,4 @@
-Autocomplete (word completeion) function predicts word user intended to type in the search box.
+**Autocomplete** (word completion) function predicts word user intended to type in the search box.
  
 Autocomplete takes a dictionary of weighted words and produces a list of suggestions for user's query.
  
