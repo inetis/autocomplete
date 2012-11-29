@@ -67,8 +67,6 @@ class TAutocomplete
 						  const size_t         max_suggestions = 5);
 
 		void load(const string &file_name);
-
-		// ToDo lahko je vec zadetkov -> normaliyiraj prehodne verjetnosti
 };
 
 

@@ -74,7 +74,7 @@ void TAutocomplete::autocomplete(const string::const_iterator  &query_begin,
 	   candidates.pop();
 
 	   if (candidate.probability < min_suggestion_prob ||              // no probable candidates left
-           (min_suggestion_prob == (float).0 && ++iteration > 10000))  // no solution found in first 1000 iterations
+           (min_suggestion_prob == (float).0 && ++iteration > 10000))  // no solution found in first 10000 iterations
 		   break;  
 
 	   if ( ! goal(candidate, query_end, min_suggestion_prob, suggestions) ) 
