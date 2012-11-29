@@ -30,7 +30,7 @@ vector<string> suggestions;            // autocomplete suggestions
 
 ac.autocomplete("cpenh", suggestions); // find suggestions for input
                                        // query "cpenh"; max number
-                                       // of sugegstions (default 5)
+                                       // of suggestions (default 5)
                                        // can be set as the last
                                        // parameter of the method
 ```
@@ -48,4 +48,4 @@ Autocomplete is licensed under MIT http://www.opensource.org/licenses/MIT
 
 ### Copyright
 
-Copyright (c) 2012, Matevz Kovacic, Inetis Ltd <info@inetis.com>
+Copyright (c) 2012, Matevž Kovačič, Inetis Ltd <info@inetis.com>
