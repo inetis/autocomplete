@@ -11,7 +11,7 @@ The results on cities database:
     cpenh       Copenhagen, Cepni, Spencer, Cienega, Cuenha
     -----------------------------------------------------------------------------------------
  
-    Autocomplete is implemented in C++. Use it as follows:
+Autocomplete is implemented in C++. Use it as follows:
  
     TAutocomplete ac;
     ac.load("cities.txt");                 // load dictionary once
@@ -22,6 +22,5 @@ The results on cities database:
                                            // of sugegstions (default 5)
                                            // can be set as the last
                                            // parameter of the method`
- 
  
 See also: http://blog.inetis.com/improved-autocomplete-function-for-google-maps
