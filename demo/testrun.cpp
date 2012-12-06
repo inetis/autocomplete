@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2012 Matevz Kovacic 
+Copyright (C) 2012 Matevz Kovacic
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation
 files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy,
@@ -23,7 +23,7 @@ void test(TAutocomplete &ac, const string &query)
 	fprintf(stdout, "%s\n========\n", query.c_str());
 
 	vector<string> results;
-	ac.autocomplete(query, results);   
+	ac.autocomplete(query, results);
 
 	for (vector<string>::const_iterator i(results.begin()); i != results.end(); ++i)
 		fprintf(stdout, "%s\n", (*i).c_str());
@@ -32,23 +32,27 @@ void test(TAutocomplete &ac, const string &query)
 }
 
 
-int main()
+int main(int argc, char* argv[])
 {
+    const char* cities = "cities.txt";
+    if(2 == argc)
+        cities = argv[1];
+
 	TAutocomplete ac;
 //	ac.load("autocomplete.txt");
-    ac.load("cities.txt");       
+    ac.load(cities);
 
-	test(ac, "nw yr");            //  1.102 expanded nodes 
-	test(ac, "Lis Agnel    ");    //  2.412 expanded nodes 
-	test(ac, "   hust");          //     66 expanded nodes 
-	test(ac, "slvenj g");         //  2.545 expanded nodes 
-	test(ac, "cpenh");            //    579 expanded nodes 
-	test(ac, "smarje");           //     77 expanded nodes 
-	test(ac, "fucking");          //    185 expanded nodes 
-	test(ac, "frugle");           //    342 expanded nodes 
-	test(ac, "smrje");           
-	test(ac, "kamence");           
-	
+	test(ac, "nw yr");            //  1.102 expanded nodes
+	test(ac, "Lis Agnel    ");    //  2.412 expanded nodes
+	test(ac, "   hust");          //     66 expanded nodes
+	test(ac, "slvenj g");         //  2.545 expanded nodes
+	test(ac, "cpenh");            //    579 expanded nodes
+	test(ac, "smarje");           //     77 expanded nodes
+	test(ac, "fucking");          //    185 expanded nodes
+	test(ac, "frugle");           //    342 expanded nodes
+	test(ac, "smrje");
+	test(ac, "kamence");
+
 	return 0;
 }
 
